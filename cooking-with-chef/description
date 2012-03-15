@@ -22,3 +22,19 @@ Nathen Harvey
 (Web Operations Manager at CustomInk)
 
 Nathen Harvey is the manager of Web Operations for CustomInk, a website that allows you to design and purchase custom apparel for your group or special event. Nathen is the co-organizer of the Washington DC MongoDB Users' Group and DevOps DC. Nathen contributes to open source projects including the Opscode Chef framework. When not working or hosting meetups, Nathen enjoys going to concerts, drinking craft beer, and over sharing on sites like twitter, untappd, and foursquare.
+
+# Prework
+
+# Initial set-up 
+
+* register with opscode
+* create a chef-repo for your cookbooks, etc.
+* install & configure chef
+
+# Launch a server
+
+* bootstrap a server
+  * vagrant
+  * ec2
+  * rackspace cloud
+
