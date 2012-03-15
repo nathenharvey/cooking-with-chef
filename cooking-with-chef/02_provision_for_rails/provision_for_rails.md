@@ -140,15 +140,14 @@ mod_rails includes the default recipe which includes installing basic apache
     )
 
 !SLIDE
-# Status Check #
-
-We now have:
+# We now have #
 
 * Server provisioned and communicating with the Chef API
 * Apache and Passenger installed with a default configuration
 * MySQL installed and running
 
-Next:
+!SLIDE
+# Next #
 
 * Prepare the application to run a Rails application
 
