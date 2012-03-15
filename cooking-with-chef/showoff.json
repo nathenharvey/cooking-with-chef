@@ -4,6 +4,7 @@
   "sections": [
     { "section":"01_intro_to_chef" },
     { "section":"02_provision_for_rails" },
-    { "section":"03_deploy_with_capistrano" }
+    { "section":"03_deploy_with_capistrano" },
+    { "section":"04_resources_and_reference" }
   ]
 }
