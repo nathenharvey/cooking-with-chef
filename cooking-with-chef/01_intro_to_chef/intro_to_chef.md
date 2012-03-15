@@ -3,7 +3,7 @@
 ## Whip up a Rails Environment with Chef ##
 ### Nathen Harvey, [CustomInk.com](http://www.customink.com)
 
-!SLIDE bullets incremental
+!SLIDE 
 # Infrastructure as Code #
 
 * survive the bus
@@ -13,7 +13,7 @@
 !SLIDE
 # Disposable Servers #
 
-!SLIDE bullets incremental
+!SLIDE
 # Evolution of Server Provisioning #
 
 * Just build it
@@ -22,7 +22,7 @@
 * Custom shell scripts
 * Systems integration framework
 
-!SLIDE bullets incremental
+!SLIDE
 # When should I use a systems integration framework? #
 
 * When you outgrow Heroku
@@ -31,7 +31,7 @@
 * Rule of thumb:
   * If you'lll need to configure this project / system again
 
-!SLIDE bullets incremental
+!SLIDE
 # Which framework should I use?#
 
 * Puppet?
@@ -39,7 +39,7 @@
 * CF Engine?
 * Juju?
 
-!SLIDE bullets incremental
+!SLIDE
 # Wrong question! #
 
 * YES - use a systems integration framework
@@ -53,7 +53,7 @@
 * Idempotent - Only take action if required
 * Convergent - Takes care of itself
 
-!SLIDE bullets incremental
+!SLIDE
 # Chef #
 
 * API
@@ -63,7 +63,7 @@
 * inspection library - ohai 
 * community site - community.opscode.com 
 
-!SLIDE bullets incremental
+!SLIDE
 # Chef's view of the world #
 
 * node
@@ -72,14 +72,14 @@
 * data bag
 * cookbooks
 
-!SLIDE bullets incremental
+!SLIDE
 # Anatomny of a Chef run #
 
 * first
 * second
 * third
 
-!SLIDE bullets incremental 
+!SLIDE 
 # Cookbooks #
 
 * the 'gems' of chef
