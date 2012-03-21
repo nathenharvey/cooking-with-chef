@@ -54,6 +54,161 @@
 * Convergent - Takes care of itself
 
 !SLIDE
+# How Does Chef Work? #
+
+* First, come up with your policy / specification
+* Abstract the **resources** in your spec.
+
+!SLIDE
+# Resources  
+
+    @@@ruby
+    package "tmux" do
+      action :install
+    end
+
+    directory "/var/www/railsapps/awesome" do
+      owner "apache"
+      group "apache"
+      action :create
+      recursive true
+    end
+
+.notes http://wiki.opscode.com/display/chef/Resources
+
+!SLIDE
+# How Does Chef Work? #
+
+* First, come up with your policy / specification
+* Abstract the **resources** in your spec.
+* Write **recipes**
+
+!SLIDE
+# Recipes
+
+    @@@ruby
+    include_recipe "app_user"
+
+    app_name = node["app_name"]
+    app_user = node["app_user"]
+    app_group = node["app_group"]
+
+    %w(releases shared).each do |dir|
+      directory "/svr/#{app_name}/#{dir}" do
+        mode "0755"
+        owner app_user
+        group app_group
+        recursive true
+      end
+    end
+
+!SLIDE
+# How Does Chef Work? #
+
+* First, come up with your policy / specification
+* Abstract the **resources** in your spec.
+* Write **recipes**
+* Package recipes in **cookbooks**
+
+!SLIDE
+# Cookbooks
+
+    |-- ldirectord
+    |   |-- README.md
+    |   |-- attributes
+    |   |   `-- default.rb
+    |   |-- metadata.rb
+    |   |-- recipes
+    |   |   `-- default.rb
+    |   `-- templates
+    |       `-- default
+    |           `-- site.cf.erb
+
+!SLIDE
+# Cookbooks
+
+    |-- monit
+    |   |-- README.rdoc
+    |   |-- attributes
+    |   |   `-- default.rb
+    |   |-- files
+    |   |   `-- ubuntu
+    |   |       `-- monit.default
+    |   |-- metadata.rb
+    |   |-- recipes
+    |   |   `-- default.rb
+    |   `-- templates
+    |       `-- default
+    |           `-- monitrc.erb
+
+
+!SLIDE
+# How Does Chef Work? #
+
+* First, come up with your policy / specification
+* Abstract the **resources** in your spec.
+* Write **recipes**
+* Package recipes in **cookbooks**
+* Apply recipes to **nodes**
+
+!SLIDE
+# Nodes
+
+* Representation of a host
+  * runs the Chef client
+  * has attributes
+  * has a list of recipes to be applied
+
+.notes http://wiki.opscode.com/display/chef/Nodes
+
+!SLIDE
+# How Does Chef Work? #
+
+* First, come up with your policy / specification
+* Abstract the **resources** in your spec.
+* Write **recipes**
+* Package recipes in **cookbooks**
+* Apply recipes to **nodes**
+* Group things into **roles**
+
+!SLIDE
+# Roles
+
+* mechanism for easily composing sets of functionality
+* have attributes and a list of recipes to be applied
+
+!SLIDE
+# Roles
+
+    @@@ruby
+    name "base"
+    description "Base of all nodes"
+    default_attributes(
+      "newrelic" => {
+        "license_key" => "cbb1f5..."
+      }
+    )
+
+    run_list(
+      "recipe[base_config]",
+      "recipe[users]",
+      "recipe[groups]",
+      "recipe[sudo]"
+    )
+
+.notes http://wiki.opscode.com/display/chef/Roles
+
+!SLIDE
+# How Does Chef Work? #
+
+* First, come up with your policy / specification
+* Abstract the **resources** in your spec.
+* Write **recipes**
+* Package recipes in **cookbooks**
+* Apply recipes to **nodes**
+* Group things into **roles**
+
+!SLIDE
 # Chef #
 
 * API
