@@ -67,7 +67,7 @@
       action :install
     end
 
-    directory "/var/www/railsapps/awesome" do
+    directory "/svr/awesome" do
       owner "apache"
       group "apache"
       action :create
@@ -355,38 +355,12 @@ The (poorly named) Chef REPL
 * Inspection library - ohai
 * REPL - shef
 * Community 
-  * community.opscode.com
-  * wiki.opscode.com
 
-.notes http://community.opscode.com
+.notes http://community.opscode.com, http://wiki.opscode.com
 
 !SLIDE
 # Community Site
 
 * Publish and share cookbooks
 * Publish and share plugins for Chef, Knife, and Ohai
-
-
-!SLIDE
-# Chef's view of the world #
-
-* node
-* role
-* environment
-* data bag
-* cookbooks
-
-!SLIDE
-# Anatomny of a Chef run #
-
-* first
-* second
-* third
-
-!SLIDE 
-# Cookbooks #
-
-* the 'gems' of chef
-* foo..
-* bar...
 
