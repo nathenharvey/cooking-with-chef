@@ -1,11 +1,3 @@
-!SLIDE 
-# Provision for Rails #
-
-* apache
-* passenger
-* mysql
-* rails application
-
 !SLIDE
 # Initial set-up steps #
 
@@ -13,30 +5,16 @@
 * create a chef-repo
 * Install chef
 * configure knife.rb
+* configure Vagrant file
+* register Vagrant instance with Chef hosted
 
-!SLIDE
-# Bootstrap a Server #
+!SLIDE 
+# Provision for Rails #
 
-* Vagrant
-* EC2
-* Rackspace
-
-!SLIDE
-# Vagrant #
-
-    @@@ruby
-    Vagrantfile
-
-!SLIDE commandline incremental
-# EC2 #
-
-    $ knife-ec2 bootstrap ...
-
-!SLIDE commandline incremental
-# Rackspace #
-
-    $ knife-rackspace bootstrap ...
-
+* apache
+* passenger
+* mysql
+* rails application
 
 !SLIDE commandline incremental
 # Add apache2 cookbook #
