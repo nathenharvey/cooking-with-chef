@@ -3,7 +3,7 @@
 
 * http://community.opscode.com
 * http://wiki.opscode.com
-* #chef on irc.freenode.net
+* \#chef on irc.freenode.net
 
 !SLIDE
 # Want even more?
