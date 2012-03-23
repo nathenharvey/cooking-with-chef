@@ -54,53 +54,19 @@
 !SLIDE
 # Write our Cookbook #
 
-
+!SLIDE
+# Create a role #
 
 !SLIDE
-# Add to our role #
-
-    @@@ruby
-    name "my_app"
-    description "Server running my application"
-    run_list(
-      "recipe[passenger_apache2::mod_rails]"
-    )
-
-mod_rails includes the default recipe which includes installing basic apache
-
-!SLIDE commandline incremental
-# Add MySQL Server to our Server #
-
-    $ knife cookbook site install mysql
-    $ knife cookbook site install openssl (installed by default?)
-    $ knife cookbook site install build-essential (installed by default?)
-    $ knife cookbook site install ruby-dev (installed by default?)
+# Assign the role to our node #
 
 !SLIDE
-# Add MySQL to our role #
-
-    @@@ruby
-    name "my_app"
-    description "Server running my application"
-    run_list(
-      "recipe[passenger_apache2::mod_rails]",
-      "recipe[mysql::server]"
-    )
+# Run chef #
 
 !SLIDE
-# We now have #
+# Review #
 
 * Server provisioned and communicating with the Chef API
 * Apache and Passenger installed with a default configuration
 * MySQL installed and running
-
-!SLIDE
-# Next #
-
-* Prepare the application to run a Rails application
-
-!SLIDE commandline incremental
-# Creating a cookbook for our app #
-
-    $knife cookbook create my_app
 
