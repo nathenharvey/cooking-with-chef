@@ -1,4 +1,12 @@
 !SLIDE
+# But wait, there's more!
+
+* encrypted databags
+* environments
+* lightweight resource providers
+* exception and report handlers
+
+!SLIDE
 # Want more?
 
 * http://community.opscode.com
