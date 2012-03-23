@@ -5,6 +5,8 @@
 # Copyright 2012, YOUR_COMPANY_NAME
 #
 # All rights reserved - Do Not Redistribute
+include_recipe "passenger_apache2" 
+
 deploy_to = "/u/apps"
 app_user = "www-data"
 app_group = "www-data"
@@ -33,11 +35,27 @@ template "#{deploy_to}/#{app_name}/shared/config/database.yml" do
   )
 end
 
-mysql_database "create #{app_name} database" do
-  host node["database"]["host"]
-  username "root"
-  password node[:mysql][:server_root_password]
-  database node["database"]["database"]
-  action :create_db
+gem_package "mysql"
+
+mysql_connection_info = {:host => "localhost", :username => 'root', :password => node['mysql']['server_root_password']}
+
+mysql_database app_name do
+  connection mysql_connection_info
+  action :create
 end
 
+mysql_database_user node["database"]["user"] do
+  connection mysql_connection_info
+  password  node["database"]["pw"]
+  database_name node["database"]["database"]
+  host "%"
+  action :grant
+end
+
+web_app app_name do
+  cookbook "passenger_apache2"
+  docroot "#{deploy_to}/public"
+  server_name "#{app_name}.#{node["domain"]}"
+  server_aliases [ app_name, "localhost", node["hostname"] ]
+  rails_env "production"
+end

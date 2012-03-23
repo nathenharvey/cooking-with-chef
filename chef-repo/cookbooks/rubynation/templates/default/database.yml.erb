@@ -4,8 +4,10 @@
 #########################################################
 staging:
   adapter:  mysql
-  host:     <%= @database_host %>
-  database: <%= @database_database %>
-  username: <%= @database_user %>
-  password: <%= @database_pw %>
+  host:     <%= @db_host %>
+  database: <%= @db_database %>
+  username: <%= @db_user %>
+  password: <%= @db_pw %>
+
+oh, by the way, @db_host is set to <%= @db_host %>
 
