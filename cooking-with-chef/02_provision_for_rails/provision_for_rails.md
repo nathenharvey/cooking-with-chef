@@ -23,68 +23,29 @@
 
 .notes http://community.opscode.com/cookbooks/passenger_apache2
 
-!SLIDE code
-
 !SLIDE 
-# passenger_apache2 Cookbook #
+# knife cookbook site install #
 
-recipes/default.rb
+1. A new "pristine copy" branch is created in git for tracking the
+   upstream;
+1. All existing cookbooks are removed from the branch;
+1. The cookbook is downloaded from the cookbook site in tarball form;
+1. The downloaded cookbook is untarred, and its contents commited via git;
+1. The pristine copy branch is merged into the master branch.
 
-    @@@ruby
-    package "apache2" do
-      package_name node[:apache][:package]
-      action :install
-    end
+!SLIDE commandline incremental
+# Add mysql cookbook #
 
-* `package` is a Chef resource
-* Where is `node[:apache][:package]` defined?
+    $ knife cookbook site install mysql
 
-!SLIDE
-# apache2 attributes/default.rb #
+.notes http://community.opscode.com/cookbooks/mysql
 
-    @@@ruby
-    case platform
-    when "redhat","centos","scientific","fedora","suse"
-      set[:apache][:package] = "httpd"
-    when "debian","ubuntu"
-      set[:apache][:package] = "apache2"
-    when "arch"
-      set[:apache][:package] = "apache"
-    when "freebsd"
-      set[:apache][:package] = "apache22"
-    else
-      ...
-    end
- 
- 
- 
-!SLIDE
-# Enable Apache on reboot 
+!SLIDE commandline incremental
+# Create a Cookbook for our app #
 
-    @@@ruby
-    service "apache2" do
-      action :enable
-    end  
+    $ knife cookbook create rubynation
 
-!SLIDE
-# Configure Apache #
-
-    @@@ruby
-    template "apache2.conf" do
-      case node[:platform]
-      when "redhat", "centos", "scientific", "fedora", "arch"
-        path "#{node[:apache][:dir]}/conf/httpd.conf"
-      when "debian","ubuntu"
-        path "#{node[:apache][:dir]}/apache2.conf"
-      when "freebsd"
-        path "#{node[:apache][:dir]}/httpd.conf"
-      end
-      source "apache2.conf.erb"
-      owner "root"
-      group node[:apache][:root_group]
-      mode 0644
-      notifies :restart, resources(:service => "apache2")
-    end
+.notes http://wiki.opscode.com/display/chef/Managing+Cookbooks+With+Knife#ManagingCookbooksWithKnife-create
 
 !SLIDE
 # Add to our role #
