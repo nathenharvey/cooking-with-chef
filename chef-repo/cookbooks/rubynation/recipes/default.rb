@@ -5,7 +5,6 @@
 # Copyright 2012, YOUR_COMPANY_NAME
 #
 # All rights reserved - Do Not Redistribute
-include_recipe "passenger_apache2" 
 
 deploy_to = "/u/apps"
 app_user = "www-data"
@@ -53,9 +52,22 @@ mysql_database_user node["database"]["user"] do
 end
 
 web_app app_name do
-  cookbook "passenger_apache2"
-  docroot "#{deploy_to}/public"
+  docroot "#{deploy_to}/current/public"
   server_name "#{app_name}.#{node["domain"]}"
   server_aliases [ app_name, "localhost", node["hostname"] ]
   rails_env "production"
 end
+
+case node[:platform]
+when "centos","redhat","fedora","suse"
+  http_path = "/etc/httpd/conf"
+when "debian","ubuntu"
+  http_path = "/etc/apache2"
+end
+
+execute "disable default" do
+  command "a2dissite default"
+  only_if "ls #{http_path}/sites-enabled/000-default"
+  notifies :reload, resources(:service => "apache2"), :delayed
+end
+
