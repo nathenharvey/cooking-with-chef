@@ -66,7 +66,7 @@
       action :install
     end
 
-    directory "/svr/awesome" do
+    directory "/u/apps/awesome" do
       owner "apache"
       group "apache"
       action :create
@@ -93,7 +93,7 @@
     app_group = node["app_group"]
 
     %w(releases shared).each do |dir|
-      directory "/svr/#{app_name}/#{dir}" do
+      directory "/u/apps/#{app_name}/#{dir}" do
         mode "0755"
         owner app_user
         group app_group
