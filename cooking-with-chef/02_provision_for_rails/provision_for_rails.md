@@ -55,13 +55,23 @@
 # Write our Cookbook #
 
 !SLIDE
-# Create a role #
+# Create some roles #
+
+* base_ubuntu
+* rubynation_web
+* rubynation_db
 
 !SLIDE
-# Assign the role to our node #
+# Assign the roles to our nodes #
+
+* Via the Web UI
+* Using knife
 
 !SLIDE
 # Run chef #
+
+* knife ssh
+* vagrant provision
 
 !SLIDE
 # Review #
