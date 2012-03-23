@@ -44,8 +44,17 @@
 # Create a Cookbook for our app #
 
     $ knife cookbook create rubynation
+    
+    ** Creating cookbook rubynation
+    ** Creating README for cookbook: rubynation
+    ** Creating metadata for cookbook: rubynation
 
 .notes http://wiki.opscode.com/display/chef/Managing+Cookbooks+With+Knife#ManagingCookbooksWithKnife-create
+
+!SLIDE
+# Write our Cookbook #
+
+
 
 !SLIDE
 # Add to our role #
