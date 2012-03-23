@@ -123,7 +123,7 @@ Execute cookbooks that are stored on disk or available at at URL
         chef.chef_server_url = "https://api.opscode.com/organizations/rubynation"
         chef.validation_key_path = "chef-repo/.chef/rubynation-validator.pem"
         chef.validation_client_name = "rubynation-validator"
-        chef.node_name = "rubynation.vagrant.local"
+        chef.node_name = "rubynation.local"
       end
     end
 
@@ -131,4 +131,4 @@ Execute cookbooks that are stored on disk or available at at URL
 # Checking In
 
     $knife node list
-    rubynation.vagrant.local 
+    rubynation.local 

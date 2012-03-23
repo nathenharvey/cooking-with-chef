@@ -37,7 +37,6 @@
 * Puppet?
 * Chef?
 * CF Engine?
-* Juju?
 
 !SLIDE
 # Wrong question! #

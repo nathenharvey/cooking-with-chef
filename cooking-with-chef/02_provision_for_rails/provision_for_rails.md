@@ -17,16 +17,16 @@
 * rails application
 
 !SLIDE commandline incremental
-# Add apache2 cookbook #
+# Add passenger_apache2 cookbook #
 
     $ knife cookbook site install passenger_apache2
-    $ knife cookbook site install apache2 (installed by default?)
-    $ knife cookbook site install build-essential (installed by default?)
+
+.notes http://community.opscode.com/cookbooks/passenger_apache2
 
 !SLIDE code
 
 !SLIDE 
-# apache2 Cookbook #
+# passenger_apache2 Cookbook #
 
 recipes/default.rb
 
