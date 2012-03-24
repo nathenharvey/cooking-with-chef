@@ -6,13 +6,12 @@ Nathen Harvey, [CustomInk.com](http://www.customink.com)
 [@nathenharvey](http://twitter.com/nathenharvey)
 
 !SLIDE
-# By the end of the session you'll be able to answer the following  #
-* Why capture your infrastructure in code? 
-* How do you build a project in Chef?
-* What are the parts of Chef?
-* How is Chef deployed?
-* What are the steps to set-up hosted chef?
-*
+# Agenda #
+* Infrastructure as Code
+* Introduction to Chef
+* Building a project in Chef
+* Provision a server for your Rails App
+* Additional resources
 
 !SLIDE 
 # Infrastructure as Code #
@@ -41,8 +40,7 @@ and bare metal resources
 !SLIDE bullets incremental
 # When should I use a systems integration framework? #
 
-* Don't!  Use Heroku
-* OK, use a framework when you outgrow Heroku
+* **After**  you outgrow Heroku
 
 
 !SLIDE bullets incremental
@@ -56,7 +54,7 @@ and bare metal resources
 # Wrong question! #
 
 * YES - use a systems integration framework
-* YES - use something that works for your team
+* YES - use one that works for your team
 * YES - this is a talk about Chef
 
 !SLIDE
@@ -381,7 +379,7 @@ The (poorly named) Chef REPL
 !SLIDE
 # community.opscode.com
 
-![community site](../images/community_site.jpg)
+[![community site](../images/community_site.jpg)](http://community.opscode.com)
 
 !SLIDE
 # Community Site

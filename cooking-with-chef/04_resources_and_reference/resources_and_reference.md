@@ -11,6 +11,7 @@
 
 * [http://community.opscode.com](http://community.opscode.com)
 * [http://wiki.opscode.com](http://wiki.opscode.com)
+* [Opscode Training Materials](https://github.com/opscode/chef-fundamentals)
 * \#chef on irc.freenode.net
 
 !SLIDE
@@ -40,5 +41,7 @@
 * [@nathenharvey](http://twitter.com/nathenharvey)
 * [http://nathenharvey.com](http://nathenharvey.com)
 * [nharvey@customink.com](mailto:nharvey@customink.com)
+
+* [Cooking with Chef](https://github.com/nathenharvey/cooking-with-chef), this presentation
 
 .notes http://twitter.com/nathenharvey
