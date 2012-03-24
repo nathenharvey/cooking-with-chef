@@ -114,7 +114,7 @@ Create the database user
     mysql_database_user node["database"]["user"] do
       connection mysql_connection_info
       password  node["database"]["pw"]
-      database_name node["database"]["database"]
+      database_name node["database"]["name"]
       host "%"
       action :grant
     end

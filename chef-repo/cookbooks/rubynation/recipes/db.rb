@@ -19,7 +19,7 @@ template "#{deploy_to}/#{app_name}/shared/config/database.yml" do
     :db_host => node["database"]["host"],
     :db_user => node["database"]["user"],
     :db_pw   => node["database"]["pw"],
-    :db_database   => node["database"]["database"]
+    :db_database   => node["database"]["name"]
   )
 end
 
@@ -35,7 +35,7 @@ end
 mysql_database_user node["database"]["user"] do
   connection mysql_connection_info
   password  node["database"]["pw"]
-  database_name node["database"]["database"]
+  database_name node["database"]["name"]
   host "%"
   action :grant
 end
