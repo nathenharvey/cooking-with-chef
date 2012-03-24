@@ -81,7 +81,7 @@ Execute cookbooks that are stored on disk or available at at URL
 .notes https://github.com/opscode/chef-repo
 
 !SLIDE
-# chef-repo direcotry
+# chef-repo directory
 
     chef-repo
     |-- .chef
