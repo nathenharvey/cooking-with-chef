@@ -6,6 +6,8 @@
 #
 # All rights reserved - Do Not Redistribute
 
+include_recipe "bundler"
+
 deploy_to = "/u/apps"
 app_user = "www-data"
 app_group = "www-data"
