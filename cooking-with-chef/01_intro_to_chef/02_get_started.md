@@ -11,7 +11,7 @@
 !SLIDE
 # chef-solo
 
-* Waht you don't get: 
+* What you don't get: 
   * central server 
   * authentication
   * authorization
@@ -76,7 +76,7 @@ Execute cookbooks that are stored on disk or available at at URL
 * Generate knife config
 * Get a private key
 * Set-up chef-repo directory
-* copy validation files and knife config to .chef
+* Copy validation files and knife config to .chef
 
 .notes https://github.com/opscode/chef-repo
 
