@@ -52,14 +52,14 @@
 .notes http://wiki.opscode.com/display/chef/Managing+Cookbooks+With+Knife#ManagingCookbooksWithKnife-create
 
 !SLIDE
-# Write our Cookbook #
+# Write our recipes
 
 * default.rb
 * web.rb
 * db.rb
 
 !SLIDE
-# Web Cookbook #
+# Web Recipe #
 
 Set-up some directories
 
@@ -88,7 +88,7 @@ Configure Apache / Passenger
     end
 
 !SLIDE
-# Database Cookbook #
+# Database Recipe #
 
 Create the database 
 
@@ -106,7 +106,7 @@ Create the database
     end
 
 !SLIDE
-#Database Cookbook #
+#Database Recipe #
 
 Create the database user
 
@@ -169,9 +169,9 @@ Create the database user
 !SLIDE commandline incremental
 # Upload the roles to the server
 
-    $ knife role from file roles/base_ubuntu
-    $ knife role from file roles/rubynation_web
-    $ knife role from file roles/rubynation_db
+    $ knife role from file roles/base_ubuntu.rb
+    $ knife role from file roles/rubynation_web.rb
+    $ knife role from file roles/rubynation_db.rb
 
 !SLIDE commandline
 # Assign the roles to our nodes #
