@@ -1,10 +1,10 @@
 !SLIDE
 # But wait, there's more!
 
-* encrypted databags
-* environments
-* lightweight resource providers
-* exception and report handlers
+* Encrypted databags
+* Environments
+* Lightweight Resources and Providers (LWRP)
+* Exception and report handlers
 
 !SLIDE
 # Want more?

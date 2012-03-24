@@ -35,8 +35,8 @@ Execute cookbooks that are stored on disk or available at at URL
 # Chef Server
 
 * Open source
-* run it yourself, wherever you like
-* a bit of a hassle to set-up and manage
+* Run it yourself, wherever you like
+* Complicated to set-up and manage
 
 .notes http://wiki.opscode.com/display/chef/Chef+Server
 !SLIDE
