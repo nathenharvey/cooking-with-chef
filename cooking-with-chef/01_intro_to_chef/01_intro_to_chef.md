@@ -219,8 +219,7 @@
 # What is Chef? #
 
 * Server - API, search, Web UI
-* Client
-  * chef-client
+* Client - chef-client
 
 !SLIDE
 # What is Chef? #
@@ -259,8 +258,7 @@
 * Server - API, search, Web UI
 * Client - chef-client
 * Command line tool - knife
-* Inspection library
-  * ohai
+* Inspection library - ohai
 
 !SLIDE
 # ohai #

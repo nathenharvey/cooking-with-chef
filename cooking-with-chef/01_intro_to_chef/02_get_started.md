@@ -12,7 +12,7 @@
 # chef-solo
 
 * Waht you don't get: 
-  * Chef server 
+  * central server 
   * authentication
   * authorization
   * search indexes
@@ -36,6 +36,7 @@ Execute cookbooks that are stored on disk or available at at URL
 
 * Open source
 * run it yourself, wherever you like
+* a bit of a hassle to set-up and manage
 
 .notes http://wiki.opscode.com/display/chef/Chef+Server
 !SLIDE
@@ -128,7 +129,10 @@ Execute cookbooks that are stored on disk or available at at URL
     end
 
 !SLIDE
-# Checking In
+# Launch Vagrant & Check In
+    
+    $ vagrant up
+    READY
 
-    $knife node list
+    $ knife node list
     rubynation.local 
