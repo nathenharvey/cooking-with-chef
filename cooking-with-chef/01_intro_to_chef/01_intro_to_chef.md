@@ -19,12 +19,12 @@ https://github.com/nathenharvey/cooking-with-chef
 # Infrastructure as Code #
 
 * Enable the reconstruction of the business   
-from nothing but a source code 
-repository, an application data backup,
-and bare metal resources
+from nothing but 
+    * a source code repository
+    * an application data backup
+    * and bare metal resources
 
 -Jesse Robins, Opscode
-
 
 !SLIDE
 # Disposable Servers #
@@ -57,7 +57,7 @@ and bare metal resources
 
 * YES - use a systems integration framework
 * YES - use one that works for your team
-* YES - this is a talk about Chef
+* YES - this is a talk about **Chef**
 
 !SLIDE
 # Chef #
@@ -70,7 +70,7 @@ and bare metal resources
 # Building a Chef Project #
 
 * First, come up with your policy / specification
-* Abstract the **resources** in your spec.
+* Abstract the **resources** in your spec
 
 !SLIDE
 # Resources  
@@ -95,7 +95,7 @@ and bare metal resources
 # Building a Chef Project #
 
 * First, come up with your policy / specification
-* Abstract the **resources** in your spec.
+* Abstract the **resources** in your spec
 * Write **recipes**
 
 !SLIDE
@@ -123,7 +123,7 @@ and bare metal resources
 # Building a Chef Project #
 
 * First, come up with your policy / specification
-* Abstract the **resources** in your spec.
+* Abstract the **resources** in your spec
 * Write **recipes**
 * Package recipes in **cookbooks**
 
@@ -167,7 +167,7 @@ and bare metal resources
 # Building a Chef Project #
 
 * First, come up with your policy / specification
-* Abstract the **resources** in your spec.
+* Abstract the **resources** in your spec
 * Write **recipes**
 * Package recipes in **cookbooks**
 * Apply recipes to **nodes**
@@ -188,7 +188,7 @@ and bare metal resources
 # Building a Chef Project #
 
 * First, come up with your policy / specification
-* Abstract the **resources** in your spec.
+* Abstract the **resources** in your spec
 * Write **recipes**
 * Package recipes in **cookbooks**
 * Apply recipes to **nodes**
@@ -229,7 +229,7 @@ and bare metal resources
 # Building a Chef Project #
 
 * First, come up with your policy / specification
-* Abstract the **resources** in your spec.
+* Abstract the **resources** in your spec
 * Write **recipes**
 * Package recipes in **cookbooks**
 * Apply recipes to **nodes**

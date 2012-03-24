@@ -11,7 +11,7 @@
 !SLIDE
 # chef-solo
 
-* Waht you don't get: 
+* What you don't get: 
   * central server 
   * authentication
   * authorization
@@ -35,8 +35,8 @@ Execute cookbooks that are stored on disk or available at at URL
 # Chef Server
 
 * Open source
-* run it yourself, wherever you like
-* a bit of a hassle to set-up and manage
+* Run it yourself, wherever you like
+* Complicated to set-up and manage
 
 .notes http://wiki.opscode.com/display/chef/Chef+Server
 !SLIDE
@@ -76,7 +76,7 @@ Execute cookbooks that are stored on disk or available at at URL
 * Generate knife config
 * Get a private key
 * Set-up chef-repo directory
-* copy validation files and knife config to .chef
+* Copy validation files and knife config to .chef
 
 .notes https://github.com/opscode/chef-repo
 

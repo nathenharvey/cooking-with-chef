@@ -2,19 +2,19 @@
 # Initial set-up steps #
 
 * Register with hosted chef
-* create a chef-repo
+* Create a chef-repo
 * Install chef
-* configure knife.rb
-* configure Vagrant file
-* register Vagrant instance with Chef hosted
+* Configure knife.rb
+* Configure Vagrant file
+* Register Vagrant instance with Chef hosted
 
 !SLIDE 
 # Provision for Rails #
 
-* apache
-* passenger
-* mysql
-* rails application
+* Apache
+* Passenger
+* MySQL
+* Rails application
 
 !SLIDE commandline incremental
 # Add passenger_apache2 cookbook #
@@ -24,14 +24,14 @@
 .notes http://community.opscode.com/cookbooks/passenger_apache2
 
 !SLIDE 
-# cookbook site install #
+# Cookbook site install #
 
 1. A new "pristine copy" branch is created in git for tracking the
-   upstream;
-1. All existing cookbooks are removed from the branch;
-1. The cookbook is downloaded from the cookbook site in tarball form;
-1. The downloaded cookbook is untarred, and its contents commited via git;
-1. The pristine copy branch is merged into the master branch.
+   upstream
+1. All existing cookbooks are removed from the branch
+1. The cookbook is downloaded from the cookbook site in tarball form
+1. The downloaded cookbook is untarred, and its contents commited via git
+1. The pristine copy branch is merged into the master branch
 
 !SLIDE commandline incremental
 # Add mysql cookbook #
@@ -77,7 +77,7 @@ Set-up some directories
 !SLIDE
 # Web Cookbook #
 
-Configure apache / passenger
+Configure Apache / Passenger
 
     @@@ ruby
     web_app app_name do
@@ -188,9 +188,9 @@ Create the database user
 !SLIDE
 # Run chef-client #
 
-* automatically
-* knife ssh
-* vagrant provision
+* Automatically
+* `knife ssh`
+* `vagrant provision`
 
 !SLIDE
 # Review #
