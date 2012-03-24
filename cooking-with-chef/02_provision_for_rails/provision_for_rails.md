@@ -41,7 +41,7 @@
 .notes http://community.opscode.com/cookbooks/mysql
 
 !SLIDE commandline incremental
-# Create a Cookbook for our app #
+# Create a Cookbook #
 
     $ knife cookbook create rubynation
     
@@ -54,6 +54,7 @@
 !SLIDE
 # Write our Cookbook #
 
+* default.rb
 * web.rb
 * db.rb
 
@@ -118,6 +119,13 @@ Create the database user
       action :grant
     end
 
+!SLIDE commandline incremental
+# Upload cookbooks to Chef server #
+
+    $ knife cookbook upload -a
+
+[![cookbooks](../images/cookbooks.jpg)](https://manage.opscode.com/cookbooks)
+
 !SLIDE
 # Create some roles #
 
@@ -171,6 +179,11 @@ Create the database user
     $ knife node run_list add rubynation.local "role[base_ubuntu]"
     $ knife node run_list add rubynation.local "role[rubynation_web]"
     $ knife node run_list add rubynation.local "role[rubynation_db]"
+
+[![edit_node](../images/edit_node.jpg)](https://manage.opscode.com/nodes/rubynation.local/edit)
+
+
+.notes https://manage.opscode.com/nodes/rubynation.local/edit
 
 !SLIDE
 # Run chef-client #

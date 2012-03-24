@@ -42,9 +42,9 @@ Execute cookbooks that are stored on disk or available at at URL
 !SLIDE
 # Hosted Chef
 
-* Opscode hosts
-* Free up to 5 nodes
 * Best way to get started
+
+[![hosted_chef](../images/plans_pricing.jpg)](http://www.opscode.com/hosted-chef/)
 
 .notes http://www.opscode.com/hosted-chef/
 
@@ -110,6 +110,8 @@ Execute cookbooks that are stored on disk or available at at URL
 * knife ec2 server create
 * knife rackspace server create
 * Vagrant
+ 
+<span style="align:right; position:relative; top:-85px;">[![vagrant](../images/vagrant.jpg)](http://vagrantup.com/)</span>
 
 !SLIDE
 # Vagrantfile

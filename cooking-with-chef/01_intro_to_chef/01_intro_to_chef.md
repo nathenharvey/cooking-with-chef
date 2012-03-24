@@ -1,44 +1,58 @@
-!SLIDE 
+!SLIDE[tpl=default]
 # The Joy of Cooking #
 ## Whip up a Rails Environment with Chef ##
-### Nathen Harvey, [CustomInk.com](http://www.customink.com)
+Nathen Harvey, [CustomInk.com](http://www.customink.com)  
+
+[@nathenharvey](http://twitter.com/nathenharvey)
+
+!SLIDE
+# By the end of the session you'll be able to answer the following  #
+* Why capture your infrastructure in code? 
+* How do you build a project in Chef?
+* What are the parts of Chef?
+* How is Chef deployed?
+* What are the steps to set-up hosted chef?
+*
 
 !SLIDE 
 # Infrastructure as Code #
 
-* survive the bus
-* automate all the things
-* lather-rinse-repeat
+* Enable the reconstruction of the business   
+from nothing but a source code 
+repository, an application data backup,
+and bare metal resources
+
+-Jesse Robins, Opscode
+
 
 !SLIDE
 # Disposable Servers #
+![trash](../images/disposable.png)
 
 !SLIDE
 # Evolution of Server Provisioning #
 
 * Just build it
 * Keep notes in server.txt
-* Migrate notes to wiki and/or git
-* Custom shell scripts
+* Migrate notes to wiki 
+* Custom shell scripts (in git)
 * Systems integration framework
 
-!SLIDE
+!SLIDE bullets incremental
 # When should I use a systems integration framework? #
 
-* When you outgrow Heroku
-* . . . but maybe even before that
+* Don't!  Use Heroku
+* OK, use a framework when you outgrow Heroku
 
-* Rule of thumb:
-  * If you'lll need to configure this project / system again
 
-!SLIDE
-# Which framework should I use?#
+!SLIDE bullets incremental
+# Which framework?#
 
+* CF Engine?
 * Puppet?
 * Chef?
-* CF Engine?
 
-!SLIDE
+!SLIDE bullets incremental
 # Wrong question! #
 
 * YES - use a systems integration framework
@@ -53,7 +67,7 @@
 * Convergent - Takes care of itself
 
 !SLIDE
-# How Does Chef Work? #
+# Building a Chef Project #
 
 * First, come up with your policy / specification
 * Abstract the **resources** in your spec.
@@ -73,10 +87,12 @@
       recursive true
     end
 
+[More resources...](http://wiki.opscode.com/display/chef/Resources)
+
 .notes http://wiki.opscode.com/display/chef/Resources
 
 !SLIDE
-# How Does Chef Work? #
+# Building a Chef Project #
 
 * First, come up with your policy / specification
 * Abstract the **resources** in your spec.
@@ -101,14 +117,17 @@
       end
     end
 
+.notes http://wiki.opscode.com/display/chef/Recipes
+
 !SLIDE
-# How Does Chef Work? #
+# Building a Chef Project #
 
 * First, come up with your policy / specification
 * Abstract the **resources** in your spec.
 * Write **recipes**
 * Package recipes in **cookbooks**
 
+.notes http://wiki.opscode.com/display/chef/Cookbooks
 !SLIDE
 # Cookbooks
 
@@ -122,6 +141,8 @@
     |   `-- templates
     |       `-- default
     |           `-- site.cf.erb
+
+.notes http://wiki.opscode.com/display/chef/Cookbooks
 
 !SLIDE
 # Cookbooks
@@ -140,15 +161,18 @@
     |       `-- default
     |           `-- monitrc.erb
 
+.notes http://wiki.opscode.com/display/chef/Cookbooks
 
 !SLIDE
-# How Does Chef Work? #
+# Building a Chef Project #
 
 * First, come up with your policy / specification
 * Abstract the **resources** in your spec.
 * Write **recipes**
 * Package recipes in **cookbooks**
 * Apply recipes to **nodes**
+
+.notes http://wiki.opscode.com/display/chef/Nodes
 
 !SLIDE
 # Nodes
@@ -161,7 +185,7 @@
 .notes http://wiki.opscode.com/display/chef/Nodes
 
 !SLIDE
-# How Does Chef Work? #
+# Building a Chef Project #
 
 * First, come up with your policy / specification
 * Abstract the **resources** in your spec.
@@ -170,11 +194,15 @@
 * Apply recipes to **nodes**
 * Group things into **roles**
 
+.notes http://wiki.opscode.com/display/chef/Roles
+
 !SLIDE
 # Roles
 
 * mechanism for easily composing sets of functionality
 * have attributes and a list of recipes to be applied
+
+.notes http://wiki.opscode.com/display/chef/Roles
 
 !SLIDE
 # Roles
@@ -198,7 +226,7 @@
 .notes http://wiki.opscode.com/display/chef/Roles
 
 !SLIDE
-# How Does Chef Work? #
+# Building a Chef Project #
 
 * First, come up with your policy / specification
 * Abstract the **resources** in your spec.
@@ -210,23 +238,18 @@
 !SLIDE
 # What is Chef? #
 
-* Server
-  * API
-  * Search Index
-  * Web UI
+![chef-server-arch.png](../images/chef-server-arch.png)
 
-!SLIDE
-# What is Chef? #
+.notes http://wiki.opscode.com/display/chef/Architecture
 
-* Server - API, search, Web UI
-* Client - chef-client
-
-!SLIDE
+!SLIDE slides incremental
 # What is Chef? #
 
 * Server - API, search, Web UI
 * Client - chef-client
 * Command line tool - knife
+
+.notes http://wiki.opscode.com/display/chef/Architecture
 
 !SLIDE commandline incremental
 # knife
@@ -356,8 +379,24 @@ The (poorly named) Chef REPL
 .notes http://community.opscode.com, http://wiki.opscode.com
 
 !SLIDE
+# community.opscode.com
+
+![community site](../images/community_site.jpg)
+
+!SLIDE
 # Community Site
 
 * Publish and share cookbooks
+
+[![cookbook site](../images/cookbook_site.jpg)](http://community.opscode.com/cookbooks)
+
+.notes http://community.opscode.com/cookbooks
+
+!SLIDE
+# Community Site
+
 * Publish and share plugins for Chef, Knife, and Ohai
 
+[![plugins](../images/plugins.jpg)](http://wiki.opscode.com/display/chef/Community+Plugins)
+
+.notes http://wiki.opscode.com/display/chef/Community+Plugins
