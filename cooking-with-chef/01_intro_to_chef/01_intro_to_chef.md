@@ -347,6 +347,11 @@ The (poorly named) Chef REPL
     chef:recipe ?>    mode "0777"
     chef:recipe ?>    action :create
     chef:recipe ?>  end
+
+!SLIDE
+# shef
+
+    @@@ ruby
     chef:recipe > run_chef
     [Thu, 15 Mar 2012 12:11:02 -0400] DEBUG: Processing file[/tmp/hello] on nathenharvey.local
     [Thu, 15 Mar 2012 12:11:02 -0400] INFO: Processing file[/tmp/hello] action create ((irb#1) line 2)
