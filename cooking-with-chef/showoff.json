@@ -1,10 +1,11 @@
 { 
   "name": "Cooking with Chef", 
   "description": "In this tutorial, we'll provide an introduction to Chef with a focus on what you'll need to know to get a Rails application up and running.",
+  "author": "@nathenharvey",
   "sections": [
-    { "section":"01_intro_to_chef" },
-    { "section":"02_provision_for_rails" },
-    { "section":"03_deploy_with_capistrano" },
-    { "section":"04_resources_and_reference" }
+    "01_intro_to_chef",
+    "02_provision_for_rails" ,
+    "03_deploy_with_capistrano" ,
+    "04_resources_and_reference" 
   ]
 }
