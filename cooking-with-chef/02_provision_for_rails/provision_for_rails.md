@@ -24,7 +24,7 @@
 .notes http://community.opscode.com/cookbooks/passenger_apache2
 
 !SLIDE 
-# knife cookbook site install #
+# cookbook site install #
 
 1. A new "pristine copy" branch is created in git for tracking the
    upstream;
