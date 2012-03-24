@@ -5,6 +5,8 @@ Nathen Harvey, [CustomInk.com](http://www.customink.com)
 
 [@nathenharvey](http://twitter.com/nathenharvey)
 
+https://github.com/nathenharvey/cooking-with-chef
+
 !SLIDE
 # Agenda #
 * Infrastructure as Code
