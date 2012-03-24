@@ -22,3 +22,7 @@ h1 { background: #F37321; color: white; padding:5px; font-family: Museo Slab; }
 h2 { color: #F37321; font-family: Museo Slab}
 h3 { color: #F37321; font-family: Museo Slab}
 h4 { color: #F37321; font-family: Museo Slab}
+
+ol li {
+  margin-bottom: 0.5em;
+}
