@@ -1,2 +1,3 @@
 .vagrant
 chef-repo/.chef
+.DS_Store
