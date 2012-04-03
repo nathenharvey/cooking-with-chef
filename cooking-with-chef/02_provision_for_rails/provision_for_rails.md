@@ -75,7 +75,7 @@ Set-up some directories
     end
 
 !SLIDE
-# Web Cookbook #
+# Web Recipe #
 
 Configure Apache / Passenger
 
