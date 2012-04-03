@@ -48,7 +48,7 @@ from nothing but
 !SLIDE bullets incremental
 # Which framework?#
 
-* CF Engine?
+* CFEngine?
 * Puppet?
 * Chef?
 
