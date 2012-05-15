@@ -1,6 +1,5 @@
 * `gem install bundler`
 * `bundle install`
-* `cd cooking-with-chef`
-* `showoff serve`
+* `bundle exec showoff serve presentation`
 
 The show should now be available at http://localhost:9090
