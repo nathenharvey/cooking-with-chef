@@ -86,8 +86,8 @@ Execute cookbooks that are stored on disk or available at at URL
     chef-repo
     |-- .chef
     |   |-- knife.rb
-    |   |-- rubynation-validator.pem
-    |   `-- rubynation.pem
+    |   |-- chefconf-validator.pem
+    |   `-- chefconf.pem
     |-- README.md
     |-- Rakefile
     |-- certificates
@@ -102,7 +102,7 @@ Execute cookbooks that are stored on disk or available at at URL
 # Verify setup
 
     $ knife client list
-    rubynation-validator 
+    chefconf-validator 
 
 !SLIDE 
 # Provision a server
@@ -123,10 +123,10 @@ Execute cookbooks that are stored on disk or available at at URL
       config.vm.forward_port 80, 8080
 
       config.vm.provision :chef_client do |chef|
-        chef.chef_server_url = "https://api.opscode.com/organizations/rubynation"
-        chef.validation_key_path = "chef-repo/.chef/rubynation-validator.pem"
-        chef.validation_client_name = "rubynation-validator"
-        chef.node_name = "rubynation.local"
+        chef.chef_server_url = "https://api.opscode.com/organizations/chefconf"
+        chef.validation_key_path = "chef-repo/.chef/chefconf-validator.pem"
+        chef.validation_client_name = "chefconf-validator"
+        chef.node_name = "chefconf.local"
       end
     end
 
@@ -137,4 +137,4 @@ Execute cookbooks that are stored on disk or available at at URL
     READY
 
     $ knife node list
-    rubynation.local 
+    chefconf.local 

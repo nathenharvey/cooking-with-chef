@@ -43,11 +43,11 @@
 !SLIDE commandline incremental
 # Create a Cookbook #
 
-    $ knife cookbook create rubynation
+    $ knife cookbook create chefconf
     
-    ** Creating cookbook rubynation
-    ** Creating README for cookbook: rubynation
-    ** Creating metadata for cookbook: rubynation
+    ** Creating cookbook chefconf
+    ** Creating README for cookbook: chefconf
+    ** Creating metadata for cookbook: chefconf
 
 .notes http://wiki.opscode.com/display/chef/Managing+Cookbooks+With+Knife#ManagingCookbooksWithKnife-create
 
@@ -133,8 +133,8 @@ Create the database user
 * Apply roles to nodes
 * Our roles:
   * base_ubuntu
-  * rubynation_web
-  * rubynation_db
+  * chefconf_web
+  * chefconf_db
 
 !SLIDE
 # base_ubuntu Role
@@ -147,43 +147,43 @@ Create the database user
     )
 
 !SLIDE
-# rubynation_web Role
+# chefconf_web Role
 
     @@@ ruby
-    name "rubynation_web"
-    description "Rubynation Webserver nodes"
+    name "chefconf_web"
+    description "ChefConf Webserver nodes"
     run_list(
-      "recipe[rubynation::web]"
+      "recipe[chefconf::web]"
     )
 
 !SLIDE
-# rubynation_db Role
+# chefconf_db Role
 
     @@@ ruby
-    name "rubynation_db"
-    description "Rubynation Database nodes"
+    name "chefconf_db"
+    description "ChefConf Database nodes"
     run_list(
-      "recipe[rubynation::db]"
+      "recipe[chefconf::db]"
     )
 
 !SLIDE commandline incremental
 # Upload the roles to the server
 
     $ knife role from file roles/base_ubuntu.rb
-    $ knife role from file roles/rubynation_web.rb
-    $ knife role from file roles/rubynation_db.rb
+    $ knife role from file roles/chefconf_web.rb
+    $ knife role from file roles/chefconf_db.rb
 
 !SLIDE commandline
 # Assign the roles to our nodes #
 
-    $ knife node run_list add rubynation.local "role[base_ubuntu]"
-    $ knife node run_list add rubynation.local "role[rubynation_web]"
-    $ knife node run_list add rubynation.local "role[rubynation_db]"
+    $ knife node run_list add chefconf.local "role[base_ubuntu]"
+    $ knife node run_list add chefconf.local "role[chefconf_web]"
+    $ knife node run_list add chefconf.local "role[chefconf_db]"
 
-[![edit_node](../images/edit_node.jpg)](https://manage.opscode.com/nodes/rubynation.local/edit)
+[![edit_node](../images/edit_node.jpg)](https://manage.opscode.com/nodes/chefconf.local/edit)
 
 
-.notes https://manage.opscode.com/nodes/rubynation.local/edit
+.notes https://manage.opscode.com/nodes/chefconf.local/edit
 
 !SLIDE
 # Run chef-client #

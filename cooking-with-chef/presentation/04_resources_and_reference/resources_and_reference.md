@@ -6,6 +6,8 @@
 * Lightweight Resources and Providers (LWRP)
 * Exception and report handlers
 
+* Come to the lightning talks tomorrow!
+
 !SLIDE
 # Want more?
 
@@ -17,7 +19,7 @@
 !SLIDE
 # Want even more?
 
-* [http://foodfightshow.org](http://foodfightshow.org)
+* [http://foodfightshow.org](http://foodfightshow.org) ![foodfight](../images/foodfight_bw.png)
   * Episode 5: Getting Started with Chef
 * [ChefConf](http://chefconf.opscode.com/) - May 15-17 in San Francisco
 

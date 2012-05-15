@@ -1,11 +1,10 @@
 { 
-  "name": "Cooking with Chef", 
-  "description": "In this tutorial, we'll provide an introduction to Chef with a focus on what you'll need to know to get a Rails application up and running.",
-  "author": "@nathenharvey",
-  "sections": [
-    "01_intro_to_chef",
-    "02_provision_for_rails" ,
-    "03_deploy_with_capistrano" ,
-    "04_resources_and_reference" 
-  ]
+  "name": "Cooking with Chef",
+  "description" : "description in in showoff.json",
+  "author" : "@nathenharvey",
+  "twitter" : "@nathenharvey",
+  "templates" : {
+    "default" : "style_guide.tpl"
+  },
+  "section" : "presentation"
 }
