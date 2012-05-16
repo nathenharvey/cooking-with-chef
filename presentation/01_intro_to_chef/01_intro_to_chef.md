@@ -59,7 +59,7 @@ from nothing but
 * YES - use one that works for your team
 * YES - this is **ChefConf**
 
-* [(Why we choose Chef @CustomInk)](http://technology.customink.com/)
+* [(Why we chose Chef @CustomInk)](http://technology.customink.com/blog/2011/11/21/why-we-chose-chef-over-puppet-at-customink)
 
 .notes http://technology.customink.com/...
 
