@@ -16,7 +16,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-include_recipe "bundler"
 
 deploy_to = "/u/apps"
 app_user = "www-data"
