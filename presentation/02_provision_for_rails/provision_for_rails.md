@@ -34,10 +34,11 @@
 # Create a Cookbook #
 
     $ knife cookbook create dcrug
-    
+   
     ** Creating cookbook dcrug
     ** Creating README for cookbook: dcrug
-    ** Creating metadata for cookbook: dcrug
+    ** Creating CHANGELOG for cookbook: dcrug
+    ** Creating metadata for cookbook: dcrug 
 
 .notes http://wiki.opscode.com/display/chef/Managing+Cookbooks+With+Knife#ManagingCookbooksWithKnife-create
 
