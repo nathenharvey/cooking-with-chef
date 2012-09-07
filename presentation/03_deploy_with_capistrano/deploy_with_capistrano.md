@@ -15,7 +15,7 @@ With Chef search
     webservers = []
     web_query = Chef::Search::Query.new
     web_query.search(:node, 
-                'role:chefconf_web') do |h|
+                'role:dcrug_web') do |h|
       websevers << h["fqdn"]
     end
 

@@ -43,11 +43,11 @@
 !SLIDE commandline incremental
 # Create a Cookbook #
 
-    $ knife cookbook create chefconf
+    $ knife cookbook create dcrug
     
-    ** Creating cookbook chefconf
-    ** Creating README for cookbook: chefconf
-    ** Creating metadata for cookbook: chefconf
+    ** Creating cookbook dcrug
+    ** Creating README for cookbook: dcrug
+    ** Creating metadata for cookbook: dcrug
 
 .notes http://wiki.opscode.com/display/chef/Managing+Cookbooks+With+Knife#ManagingCookbooksWithKnife-create
 
@@ -133,8 +133,8 @@ Create the database user
 * Apply roles to nodes
 * Our roles:
   * base_ubuntu
-  * chefconf_web
-  * chefconf_db
+  * dcrug_web
+  * dcrug_db
 
 !SLIDE
 # base_ubuntu Role
@@ -147,43 +147,43 @@ Create the database user
     )
 
 !SLIDE
-# chefconf_web Role
+# dcrug_web Role
 
     @@@ ruby
-    name "chefconf_web"
-    description "ChefConf Webserver nodes"
+    name "dcrug_web"
+    description "DCRUG Webserver nodes"
     run_list(
-      "recipe[chefconf::web]"
+      "recipe[dcrug::web]"
     )
 
 !SLIDE
-# chefconf_db Role
+# dcrug_db Role
 
     @@@ ruby
-    name "chefconf_db"
-    description "ChefConf Database nodes"
+    name "dcrug_db"
+    description "DCRUG Database nodes"
     run_list(
-      "recipe[chefconf::db]"
+      "recipe[dcrug::db]"
     )
 
 !SLIDE commandline incremental
 # Upload the roles to the server
 
     $ knife role from file roles/base_ubuntu.rb
-    $ knife role from file roles/chefconf_web.rb
-    $ knife role from file roles/chefconf_db.rb
+    $ knife role from file roles/dcrug_web.rb
+    $ knife role from file roles/dcrug_db.rb
 
 !SLIDE commandline
 # Assign the roles to our nodes #
 
-    $ knife node run_list add chefconf.local "role[base_ubuntu]"
-    $ knife node run_list add chefconf.local "role[chefconf_web]"
-    $ knife node run_list add chefconf.local "role[chefconf_db]"
+    $ knife node run_list add dcrug.local "role[base_ubuntu]"
+    $ knife node run_list add dcrug.local "role[dcrug_web]"
+    $ knife node run_list add dcrug.local "role[dcrug_db]"
 
-[![edit_node](../images/edit_node.jpg)](https://manage.opscode.com/nodes/chefconf.local/edit)
+[![edit_node](../images/edit_node.jpg)](https://manage.opscode.com/nodes/dcrug.local/edit)
 
 
-.notes https://manage.opscode.com/nodes/chefconf.local/edit
+.notes https://manage.opscode.com/nodes/dcrug.local/edit
 
 !SLIDE
 # Run chef-client #

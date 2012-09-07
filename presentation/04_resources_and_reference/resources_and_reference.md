@@ -21,9 +21,6 @@
 
 * [http://foodfightshow.org](http://foodfightshow.org) ![foodfight](../images/foodfight_bw.png)
   * Episode 5: Getting Started with Chef
-* [ChefConf](http://chefconf.opscode.com/) - May 15-17 in San Francisco
-
-<a href="http://chefconf.opscode.com/"><img title="Attending #ChefConf!" src="http://chefconf.opscode.com/wp-content/uploads/ChefConf-Attending-Banner-1.png" alt="Attending #ChefConf!" width="300" height="250" /></a> (...and so are you)
 
 
 .notes http://www.foodfightshow.org/2012/03/episode-5-getting-started-with-chef.html

@@ -57,7 +57,7 @@ from nothing but
 
 * YES - use a systems integration framework
 * YES - use one that works for your team
-* YES - this is **ChefConf**
+* YES - this is a talk about **Cheff**
 
 * [(Why we chose Chef @CustomInk)](http://technology.customink.com/blog/2011/11/21/why-we-chose-chef-over-puppet-at-customink)
 
@@ -333,8 +333,8 @@ The (poorly named) Chef REPL
 
     @@@ ruby
     chef > attributes
-    chef:attributes > set["shef_example"] = "Hello, #ChefConf!"
-     => "Hello, #ChefConf!"
+    chef:attributes > set["shef_example"] = "Hello, DCRUG!"
+     => "Hello, DCRUG!"
     chef:attributes > quit
      => :attributes
 
@@ -371,7 +371,7 @@ The (poorly named) Chef REPL
 # shef
 
     $ cat /tmp/hello
-    Hello, #ChefConf!
+    Hello, DCRUG!
 
 .notes http://wiki.opscode.com/display/chef/Shef, http://wiki.opscode.com/display/chef/Getting+Started+with+Shef
 
