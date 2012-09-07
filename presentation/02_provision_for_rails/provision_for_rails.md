@@ -134,7 +134,8 @@ Create the database user
     name "base_ubuntu"
     description "all Ubuntu servers"
     run_list(
-      "recipe[apt]"
+      "recipe[apt]",
+      "recipe[build-essential]" 
     )
 
 !SLIDE
