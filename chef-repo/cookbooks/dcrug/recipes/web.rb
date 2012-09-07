@@ -33,7 +33,7 @@ app_name = "dcrug"
 end
 
 web_app app_name do
-  docroot "#{deploy_to}/current/public"
+  docroot "#{deploy_to}/#{app_name}/current/public"
   server_name "#{app_name}.#{node["domain"]}"
   server_aliases [ app_name, "localhost", node["hostname"] ]
   rails_env "production"
