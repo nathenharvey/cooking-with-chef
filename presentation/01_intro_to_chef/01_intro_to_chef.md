@@ -57,7 +57,7 @@ from nothing but
 
 * YES - use a systems integration framework
 * YES - use one that works for your team
-* YES - this is a talk about **Cheff**
+* YES - this is a talk about **Chef**
 
 * [(Why we chose Chef @CustomInk)](http://technology.customink.com/blog/2011/11/21/why-we-chose-chef-over-puppet-at-customink)
 
@@ -73,7 +73,7 @@ from nothing but
 !SLIDE
 # Building a Chef Project #
 
-* First, come up with your policy / specification
+* First, come up with your specification
 * Abstract the **resources** in your spec
 
 !SLIDE
@@ -98,7 +98,7 @@ from nothing but
 !SLIDE
 # Building a Chef Project #
 
-* First, come up with your policy / specification
+* First, come up with your specification
 * Abstract the **resources** in your spec
 * Write **recipes**
 
@@ -126,7 +126,7 @@ from nothing but
 !SLIDE
 # Building a Chef Project #
 
-* First, come up with your policy / specification
+* First, come up with your specification
 * Abstract the **resources** in your spec
 * Write **recipes**
 * Package recipes in **cookbooks**
@@ -170,7 +170,7 @@ from nothing but
 !SLIDE
 # Building a Chef Project #
 
-* First, come up with your policy / specification
+* First, come up with your specification
 * Abstract the **resources** in your spec
 * Write **recipes**
 * Package recipes in **cookbooks**
@@ -191,7 +191,7 @@ from nothing but
 !SLIDE
 # Building a Chef Project #
 
-* First, come up with your policy / specification
+* First, come up with your specification
 * Abstract the **resources** in your spec
 * Write **recipes**
 * Package recipes in **cookbooks**
@@ -232,7 +232,7 @@ from nothing but
 !SLIDE
 # Building a Chef Project #
 
-* First, come up with your policy / specification
+* First, come up with your specification
 * Abstract the **resources** in your spec
 * Write **recipes**
 * Package recipes in **cookbooks**

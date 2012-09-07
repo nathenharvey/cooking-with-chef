@@ -70,17 +70,6 @@ Execute cookbooks that are stored on disk or available at at URL
 .notes http://wiki.opscode.com/display/chef/Fast+Start+Guide
 
 !SLIDE
-# Client configuration
-
-* Get organization validation key
-* Generate knife config
-* Get a private key
-* Set-up chef-repo directory
-* Copy validation files and knife config to .chef
-
-.notes https://github.com/opscode/chef-repo
-
-!SLIDE
 # chef-repo directory
 
     chef-repo
@@ -97,6 +86,8 @@ Execute cookbooks that are stored on disk or available at at URL
     |-- data_bags
     |-- environments
     `-- roles
+
+.notes https://github.com/opscode/chef-repo
 
 !SLIDE commandline incremental
 # Verify setup

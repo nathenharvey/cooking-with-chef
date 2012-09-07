@@ -23,16 +23,6 @@
 
 .notes http://community.opscode.com/cookbooks/passenger_apache2
 
-!SLIDE 
-# Cookbook site install #
-
-1. A new "pristine copy" branch is created in git for tracking the
-   upstream
-1. All existing cookbooks are removed from the branch
-1. The cookbook is downloaded from the cookbook site in tarball form
-1. The downloaded cookbook is untarred, and its contents commited via git
-1. The pristine copy branch is merged into the master branch
-
 !SLIDE commandline incremental
 # Add mysql cookbook #
 

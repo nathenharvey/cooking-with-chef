@@ -6,8 +6,6 @@
 * Lightweight Resources and Providers (LWRP)
 * Exception and report handlers
 
-* Come to the lightning talks tomorrow!
-
 !SLIDE
 # Want more?
 
@@ -21,6 +19,8 @@
 
 * [http://foodfightshow.org](http://foodfightshow.org) ![foodfight](../images/foodfight_bw.png)
   * Episode 5: Getting Started with Chef
+
+* [Visual Introduction to Chef](http://www.mynameiskate.com/visual-guide-to-chef/)
 
 
 .notes http://www.foodfightshow.org/2012/03/episode-5-getting-started-with-chef.html
@@ -39,7 +39,8 @@
 
 * [@nathenharvey](http://twitter.com/nathenharvey)
 * [http://nathenharvey.com](http://nathenharvey.com)
-* [nharvey@customink.com](mailto:nharvey@customink.com)
+* <s>[nharvey@customink.com](mailto:nharvey@customink.com)</s>
+* [nathen.harvey@gmail.com](mailto:nathen.harvey@gmail.com)
 
 * [Cooking with Chef](https://github.com/nathenharvey/cooking-with-chef), this presentation
 
