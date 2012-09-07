@@ -26,11 +26,15 @@ This cookbook doesn't have direct dependencies on other cookbooks. Depending on 
 
 On Ubuntu/Debian, use Opscode's `apt` cookbook to ensure the package cache is updated so Chef can install packages, or consider putting apt-get in your bootstrap process or [knife bootstrap template](http://wiki.opscode.com/display/chef/Knife+Bootstrap).
 
-On RHEL, SELinux is enabled by default. The `selinux` cookbook contains a `permissive` recipe that can be used to set SELinux to "Permissive" state.
+On RHEL, SELinux is enabled by default. The `selinux` cookbook contains a `permissive` recipe that can be used to set SELinux to "Permissive" state. Otherwise, additional recipes need to be created by the user to address SELinux permissions.
 
-The easiest but certainly not ideal way to deal with IPtables is of course to flush all rules. Opscode does provide an `iptables` cookbook but is migrating from the approach used there to a more robust solution utilizing a general "firewall" LWRP that would have an "iptables" provider. Alternately, you can use ufw, with Opscode's `ufw` and `firewall` cookbooks to set up rules. See those cookbooks' READMEs for documentation.
+The easiest but **certainly not ideal way** to deal with IPtables is to flush all rules. Opscode does provide an `iptables` cookbook but is migrating from the approach used there to a more robust solution utilizing a general "firewall" LWRP that would have an "iptables" provider. Alternately, you can use ufw, with Opscode's `ufw` and `firewall` cookbooks to set up rules. See those cookbooks' READMEs for documentation.
 
-Build/compile tools may not be installed on the system by default. Some recipes (e.g., `apache2::mode_auth_openid`) build the module from source. Use Opscode's `build-essential` cookbook to get essential build packages installed.
+Build/compile tools may not be installed on the system by default. Some recipes (e.g., `apache2::mod_auth_openid`) build the module from source. Use Opscode's `build-essential` cookbook to get essential build packages installed.
+
+On ArchLinux, if you are using the `apache2::mod_auth_openid` recipe, you also need the `pacman` cookbook for the `pacman_aur` LWRP. Put `recipe[pacman]` on the node's expanded run list (on the node or in a role). This is not an explicit dependency because it is only required for this single recipe and platform; the pacman default recipe performs `pacman -Sy` to keep pacman's package cache updated.
+
+The `apache2::god_monitor` recipe uses a definition from the `god` cookbook. Include `recipe[god]` in the node's expanded run list to ensure that the cookbook is downloaded.
 
 ## Platforms:
 
@@ -40,10 +44,20 @@ Build/compile tools may not be installed on the system by default. Some recipes 
 * SUSE/OpenSUSE
 * ArchLinux
 * Amazon Linux AMI
+* FreeBSD
 
 ### Notes for RHEL Family:
 
 On Red Hat Enterprise Linux and derivatives, the EPEL repository may be necessary to install packages used in certain recipes. The `apache2::default` recipe, however, does not require any additional repositories. Opscode's `yum` cookbook contains a recipe to add the EPEL repository. See __Examples__ for more information.
+
+### Notes for FreeBSD:
+
+The `apache2::mod_php5` recipe depends on the `freebsd` cookbook, which it uses to set the correct options for compiling the `php5` port from sources. You need to ensure the `freebsd` is in the expanded run list, or this recipe will fail. We don't set an explicit dependency because we feel the `freebsd` cookbook is something users would want on their nodes, and due to the generality of this cookbook we don't want additional specific dependencies.
+
+Tests
+=====
+
+This cookbook in the [source repository](https://github.com/opscode-cookbooks/apache2) contains minitest and cucumber tests. This is an initial proof of concept that will be fleshed out with more supporting infrastructure at a future time.
 
 Attributes
 ==========
@@ -64,6 +78,8 @@ In order to support the broadest number of platforms, several attributes are det
 * `node['apache']['cache_dir']` - Location for cached files used by Apache itself or recipes
 * `node['apache']['pid_file']` - Location of the PID file for Apache httpd
 * `node['apache']['lib_dir']` - Location for shared libraries
+* `node['apache']['default_site_enabled']` - Default site enabled. Defaults to true on redhat-family platforms
+* `node['apache']['ext_status']` - if true, enables ExtendedStatus for `mod_status`
 
 General settings
 ----------------
@@ -99,8 +115,8 @@ Worker attributes are used for tuning the Apache HTTPD worker MPM configuration.
 
 * `node['apache']['worker']['startservers']` - Initial number of server processes to start. Default 4
 * `node['apache']['worker']['maxclients']` - Maximum number of simultaneous connections. Default 1024.
-* `node['apache']['worker']['minsparethreads]` - Minimum number of spare worker threads. Default 64
-* `node['apache']['worker']['maxsparethreads]` - Maximum number of spare worker threads. Default 192.
+* `node['apache']['worker']['minsparethreads']` - Minimum number of spare worker threads. Default 64
+* `node['apache']['worker']['maxsparethreads']` - Maximum number of spare worker threads. Default 192.
 * `node['apache']['worker']['maxrequestsperchild']` - Maximum number of requests a child process will handle.
 
 mod\_auth\_openid attributes
@@ -149,6 +165,13 @@ Change the DBLocation with the attribute as required; this file is in a differen
 * `require user` instead of `AuthOpenIDUserProgram`.
 * A bug(?) in `mod_auth_openid` causes it to segfault when attempting to update the database file if the containing directory is not writable by the HTTPD process owner (e.g., www-data), even if the file is writable. In order to not interfere with other settings from the default recipe in this cookbook, the db file is moved.
 
+mod\_fastcgi
+------------
+
+Install the fastcgi package and enable the module.
+
+Only work on Debian/Ubuntu
+
 mod\_fcgid
 ----------
 
@@ -173,7 +196,7 @@ Besides installing and enabling `mod_ssl`, this recipe will append port 443 to t
 god\_monitor
 ------------
 
-Sets up a `god` monitor for Apache. External requirements are the `god` and `runit` cookbooks from Opscode.
+Sets up a `god` monitor for Apache. External requirements are the `god` and `runit` cookbooks from Opscode. When using this recipe, include `recipe[god]` in the node's expanded run list to ensure the client downloads it; `god` depends on runit so that will also be downloaded.
 
 Definitions
 ===========
@@ -261,9 +284,9 @@ It will then configure the template (see __Parameters__ and __Examples__ below),
 
 Current parameters used by the definition:
 
-* `name` - The name of the site. The template will be written to `#{node['apache']['dir']}/sites-available/#{params[:name]}.conf`
+* `name` - The name of the site. The template will be written to `#{node['apache']['dir']}/sites-available/#{params['name']}.conf`
 * `cookbook` - Optional. Cookbook where the source template is. If this is not defined, Chef will use the named template in the cookbook where the definition is used.
-* `template` - Default `web_app.conf.erb`, source template file. 
+* `template` - Default `web_app.conf.erb`, source template file.
 * `enable` - Default true. Passed to the `apache_site` definition.
 
 Additional parameters can be defined when the definition is called in a recipe, see __Examples__.
