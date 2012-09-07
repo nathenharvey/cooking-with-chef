@@ -2,8 +2,7 @@
 # vi: set ft=ruby :
 
 Vagrant::Config.run do |config|
-  config.vm.box_url = "https://opscode-vm.s3.amazonaws.com/vagrant/boxes/opscode-ubuntu-12.04.box"
-  config.vm.box = "opscode-ubuntu-12.04" 
+  config.vm.box = "ubuntu64-ruby-1.9.3"
 
   config.vm.forward_port 80, 8080
 
