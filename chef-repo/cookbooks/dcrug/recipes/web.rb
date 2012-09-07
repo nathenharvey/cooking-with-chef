@@ -52,3 +52,5 @@ execute "disable default" do
   notifies :reload, resources(:service => "apache2"), :delayed
 end
 
+gem_package "bundler"
+
