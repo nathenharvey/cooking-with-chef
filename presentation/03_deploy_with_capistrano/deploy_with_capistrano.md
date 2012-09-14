@@ -16,7 +16,7 @@ With Chef search
     web_query = Chef::Search::Query.new
     web_query.search(:node, 
                 'role:dcrug_web') do |h|
-      websevers << h["fqdn"]
+      webservers << h["fqdn"]
     end
 
     role :web, *webservers
